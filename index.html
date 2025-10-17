@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naveen Metri | Portfolio</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Custom Favicon (replace with a link to your image) -->
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/189886215?s=400&u=fa7f3aa0971579fc2fb5ab324d1fc67b05d41c4a&v=4" type="image/x-icon">
+
+    <style>
+        /* Custom styles to extend Tailwind */
+        body { background-color: #000000; color: #f3f3f3; font-family: 'Inter', sans-serif; }
+        .text-gold { color: #FFD700; }
+        .bg-dark-card { background-color: #111111; }
+        .border-gold { border-color: #FFD700; }
+        .hover\:border-gold:hover { border-color: #FFD700; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Main Container -->
+    <div class="min-h-screen flex flex-col items-center">
+
+        <!-- Header -->
+        <header class="w-full max-w-5xl mx-auto p-4 md:py-6 flex justify-between items-center sticky top-0 bg-black bg-opacity-80 backdrop-blur-sm z-50">
+            <a href="index.html" class="text-xl font-bold hover:text-gold transition-colors">NM</a>
+            <nav class="flex items-center gap-4 md:gap-6">
+                <a href="about.html" class="text-sm hover:text-gold transition-colors">About</a>
+                <a href="projects.html" class="text-sm hover:text-gold transition-colors">Projects</a>
+                <a href="certifications.html" class="text-sm hover:text-gold transition-colors">Certifications</a>
+                <div class="flex items-center gap-3 md:gap-4 ml-2 border-l border-gray-700 pl-4">
+                    <a href="https://github.com/metrinaveen08" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                    <a href="https://linkedin.com/in/metri-naveen-kumar" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a href="https://www.kaggle.com/metrinaveen" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition-colors font-bold text-lg leading-none">K</a>
+                    <a href="mailto:your.email@example.com" class="hover:text-gold transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                    </a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="w-full max-w-5xl mx-auto p-4 flex-grow">
+            <!-- Hero Section -->
+            <section class="flex flex-col items-center justify-center text-center py-16 md:py-24">
+                <h1 class="text-4xl md:text-6xl font-black text-gold mb-4">Naveen Metri</h1>
+                <p class="max-w-3xl text-md md:text-lg text-gray-300 mb-12">
+                    Bridging multiple domains through technology, creativity, and innovation. From building games to securing systems, from training AI models to crafting stories, I explore the intersection of technology and human experience.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+                    <!-- Skill Card -->
+                    <div class="bg-dark-card p-6 rounded-lg border border-gray-800 transition-all duration-300 hover:scale-105 hover:border-gold">
+                        <h3 class="text-lg font-bold text-gold mb-2">Game Development</h3>
+                        <p class="text-sm text-gray-400">Creating immersive gaming experiences and interactive entertainment</p>
+                    </div>
+                    <!-- Skill Card -->
+                    <div class="bg-dark-card p-6 rounded-lg border border-gray-800 transition-all duration-300 hover:scale-105 hover:border-gold">
+                        <h3 class="text-lg font-bold text-gold mb-2">Cybersecurity</h3>
+                        <p class="text-sm text-gray-400">Securing systems and protecting digital assets from emerging threats</p>
+                    </div>
+                    <!-- Skill Card -->
+                    <div class="bg-dark-card p-6 rounded-lg border border-gray-800 transition-all duration-300 hover:scale-105 hover:border-gold">
+                        <h3 class="text-lg font-bold text-gold mb-2">AI & Machine Learning</h3>
+                        <p class="text-sm text-gray-400">Training models and developing intelligent systems that learn and adapt</p>
+                    </div>
+                    <!-- Skill Card -->
+                    <div class="bg-dark-card p-6 rounded-lg border border-gray-800 transition-all duration-300 hover:scale-105 hover:border-gold">
+                        <h3 class="text-lg font-bold text-gold mb-2">Creative Writing</h3>
+                        <p class="text-sm text-gray-400">Crafting compelling narratives and exploring human stories through words</p>
+                    </div>
+                    <!-- Skill Card -->
+                    <div class="bg-dark-card p-6 rounded-lg border border-gray-800 transition-all duration-300 hover:scale-105 hover:border-gold">
+                        <h3 class="text-lg font-bold text-gold mb-2">Technology Innovation</h3>
+                        <p class="text-sm text-gray-400">Pushing boundaries with cutting-edge solutions and emerging technologies</p>
+                    </div>
+                    <!-- Skill Card -->
+                    <div class="bg-dark-card p-6 rounded-lg border border-gray-800 transition-all duration-300 hover:scale-105 hover:border-gold">
+                        <h3 class="text-lg font-bold text-gold mb-2">Human Experience</h3>
+                        <p class="text-sm text-gray-400">Understanding and enhancing the intersection of technology and humanity</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="w-full max-w-5xl mx-auto p-4 text-center text-xs text-gray-500">
+            <p>© 2024 Naveen Metri. Building the future through technology and innovation.</p>
+        </footer>
+    </div>
+
+</body>
+</html>

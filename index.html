@@ -9,54 +9,117 @@
     
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Updated Fonts: Using Poppins (Headings) and Roboto (Body) for top-tier professional legibility --><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- FIX: Removed non-standard xintegrity and incomplete hash placeholder. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" />
 
-    <style>
+    <!-- FIX: Added type="text/css" to style tag. -->
+    <style type="text/css">
+        /* Top 1% Font Styles: Roboto for body/paragraphs, Poppins for headings/display */
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Roboto', sans-serif;
             scroll-behavior: smooth;
             /* Subtle dark blue to black gradient background */
             background: linear-gradient(135deg, #10172A 0%, #030712 100%);
         }
         h1, h2, h3, .text-xl, nav a {
-            font-family: 'Outfit', sans-serif;
-            letter-spacing: -0.02em;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: -0.01em;
         }
         .ai-glow {
-            /* Reduced glow for improved legibility */
-            text-shadow: 0 0 6px rgba(59, 130, 246, 0.35);
+            /* Dynamic glow uses the text's Tailwind color for the shadow */
+            text-shadow: 0 0 8px currentColor;
+            opacity: 0.9;
         }
+
+        /* --- UNIQUE HOME SECTION STYLES --- */
+        .text-gradient {
+            /* Custom text gradient: Fuchsia to Violet (Primary Identity Gradient) */
+            background-image: linear-gradient(90deg, #ec4899 0%, #a855f7 100%); /* fuchsia-500 to violet-500 */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        
+        /* New: Class for Navigation Link Hover Gradient */
+        .nav-link-hover:hover {
+            background-image: linear-gradient(90deg, #ec4899 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            text-shadow: 0 0 6px rgba(168, 85, 247, 0.5); 
+        }
+
+        .header-logo-glow {
+            text-shadow: 0 0 6px rgba(168, 85, 247, 0.5); 
+            opacity: 1;
+        }
+
+        .home-headline-glow {
+            text-shadow: 0 0 10px rgba(168, 85, 247, 0.7); 
+            opacity: 1;
+        }
+
+        /* NEW: Button Gradient Hover Effect */
+        .btn-gradient-hover:hover {
+            background-image: linear-gradient(90deg, #ec4899 0%, #a855f7 100%); /* fuchsia-500 to violet-500 */
+            color: white; /* Ensure text remains white or light on gradient */
+            box-shadow: 0 0 15px rgba(168, 85, 247, 0.6); /* Matching glow for button */
+        }
+        /* --- */
+
+        /* FINAL UNIQUE SKILLS GRADIENT: Electric Cyan to Bright Gold */
+        .skills-gradient {
+            background-image: linear-gradient(90deg, #06b6d4 0%, #facc15 100%); /* cyan-500 to yellow-400 */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        
+        /* Contact Section Gradient (Metallic Silver to Deep Violet) */
+        .contact-gradient {
+            background-image: linear-gradient(90deg, #d1d5db 0%, #a855f7 100%); /* gray-300 to violet-500 */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        /* -------------------------------- */
+
         .project-card {
             border: 1px solid #1F2937;
             transition: all 0.3s ease;
         }
         .project-card:hover {
-            border-color: #3B82F6;
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+            /* Retained Primary Accent (Cyan) for hover interaction */
+            border-color: #06b6d4; /* cyan-500 */
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
             transform: scale(1.02);
         }
     </style>
 </head>
 
-<body class="text-gray-100 min-h-screen">
+<body class="text-white min-h-screen">
 
     
     <header class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-sm shadow-xl">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 
-                <a href="#home" class="text-xl font-extrabold text-blue-400 ai-glow transition duration-300">
+                <!-- APPLIED FUCHSIA-TO-VIOLET GRADIENT AND GLOW --><a href="#home" class="text-xl font-extrabold text-gradient header-logo-glow transition duration-300">
                     M. Sai Krishna (AI/ML)
                 </a>
                 
                 
                 <nav class="hidden md:flex space-x-8 items-center">
-                    <a href="#home" class="text-gray-300 hover:text-blue-400 font-medium transition duration-300">About</a>
-                    <a href="#projects" class="text-gray-300 hover:text-blue-400 font-medium transition duration-300">Projects</a>
-                    <a href="#skills" class="text-gray-300 hover:text-blue-400 font-medium transition duration-300">Skills</a>
-                    <a href="#contact" class="text-gray-300 hover:text-blue-400 font-medium transition duration-300">Contact</a>
+                    <!-- Updated to use the new gradient hover class --><a href="#home" class="text-gray-300 font-medium transition duration-300 nav-link-hover">About</a>
+                    <a href="#projects" class="text-gray-300 font-medium transition duration-300 nav-link-hover">Projects</a>
+                    <a href="#skills" class="text-gray-300 font-medium transition duration-300 nav-link-hover">Skills</a>
+                    <a href="#contact" class="text-gray-300 font-medium transition duration-300 nav-link-hover">Contact</a>
                 </nav>
             </div>
         </div>
@@ -69,26 +132,26 @@
             
             <div class="md:w-3/5 text-center md:text-left">
                 
-                <span class="inline-block bg-red-700/70 text-red-200 text-xs font-bold px-3 py-1 rounded-full mb-3 shadow-md tracking-wider">
+                <!-- NEW UNIQUE ACCENT: TURQUOISE --><span class="inline-block bg-teal-500 text-teal-900 text-xs font-bold px-3 py-1 rounded-full mb-3 shadow-md tracking-wider">
                     IEEE MEMBER
                 </span>
-                <p class="text-xl text-blue-400 font-semibold mb-3">Hello, I'm Mangali Sai Krishna</p>
+                <!-- HOME ACCENT: ROSE (Subtle contrast) --><p class="text-xl text-rose-400 font-semibold mb-3">Hello, I'm Mangali Sai Krishna</p>
                 <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-4 leading-tight">
-                    Modular Systems Architect <span class="text-blue-400 ai-glow">&amp; AI/ML Developer</span>
+                    Modular Systems Architect <span class="text-gradient home-headline-glow">&amp; AI/ML Developer</span>
                 </h1>
-                <p class="text-lg text-gray-400 max-w-xl mx-auto md:mx-0 mt-6">
+                <p class="text-lg text-gray-300 max-w-xl mx-auto md:mx-0 mt-6">
                     I’m a second-year B.Tech student in Computer Science and Engineering, specializing in **Artificial Intelligence & Machine Learning**. My passion lies in turning abstract logic into working, scalable code—from recursive algorithms to full-fledged GUI applications. <br><br>
                     As a **Python Developer**, I specialize in building **interactive GUI tools (Tkinter)**, designing **intelligent regex validators**, and optimizing performance with modular design. I demonstrate hands-on proficiency across diverse languages and platforms, including foundational **C/Java** and cutting-edge **Web3/Next.js** systems, and am currently focused on **Flask and REST API development**.
                 </p>
                 <div class="mt-8 space-x-4">
-                    <a href="#projects" class="inline-block px-8 py-3 bg-blue-600 text-white font-bold rounded-lg shadow-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105">View Projects</a>
-                    <a href="#contact" class="inline-block px-8 py-3 bg-gray-700 text-gray-300 font-bold rounded-lg hover:bg-gray-600 transition duration-300 transform hover:scale-105">Connect</a>
+                    <!-- APPLIED GRADIENT HOVER --><a href="#projects" class="inline-block px-8 py-3 bg-lime-500 text-gray-900 font-bold rounded-lg shadow-lg transition duration-300 transform hover:scale-105 btn-gradient-hover">View Projects</a>
+                    <!-- APPLIED GRADIENT HOVER --><a href="#contact" class="inline-block px-8 py-3 bg-gray-700 text-gray-200 font-bold rounded-lg transition duration-300 transform hover:scale-105 btn-gradient-hover">Connect</a>
                 </div>
             </div>
 
             
             <div class="md:w-2/5 flex justify-center">
-                <div class="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 bg-gray-800 rounded-full flex items-center justify-center border-2 md:border-4 border-blue-500 shadow-2xl overflow-hidden">
+                <!-- UNIQUE ACCENT: FUCHSIA (Border) --><div class="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 bg-gray-800 rounded-full flex items-center justify-center border-2 md:border-4 border-fuchsia-500 shadow-2xl overflow-hidden">
                     <img src="assets/me1.jpg" 
                         width="512" height="512"
                         onerror="this.onerror=null;this.src='https://placehold.co/256x256/1F2937/9CA3AF?text=Your+Photo'" 
@@ -100,32 +163,32 @@
         
         
         <section id="projects" class="py-16">
-            <h2 class="text-4xl font-bold text-center mb-12 text-blue-400 ai-glow">AI/ML & Core Systems Projects</h2>
+            <!-- CHANGED COLOR TO LIGHT BLUE (text-sky-300) --><h2 class="text-4xl font-bold text-center mb-12 text-sky-300 ai-glow">AI/ML & Core Systems Projects</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 
                 <div class="bg-gray-900/70 p-6 rounded-xl project-card">
-                    <h3 class="text-xl font-bold text-blue-400 mb-3">Advanced NFT Marketplace DApp</h3>
-                    <p class="text-gray-400 mb-4 text-sm">
+                    <!-- PROJECTS ACCENT: VIOLET --><h3 class="text-xl font-bold text-violet-400 mb-3">Advanced NFT Marketplace DApp</h3>
+                    <p class="text-gray-300 mb-4 text-sm">
                         A robust, team-developed, full-stack decentralized application (DApp) built with **Next.js** and **Solidity**. It enables users to mint, list, and trade NFTs, integrating advanced features like wallet connection, IPFS storage, and a creator royalty system.
                     </p>
                     <p class="text-xs text-gray-500 mt-2 italic">*Team Collaboration Project with three other developers.*</p>
                     <div class="flex flex-wrap gap-2 mb-4 mt-4">
-                        <span class="bg-blue-600/30 text-blue-200 font-semibold text-xs px-2.5 py-0.5 rounded-full">Next.js</span>
+                        <!-- VIOLET tag for Next.js (Web3/DApp tech) --><span class="bg-violet-600/30 text-violet-200 font-semibold text-xs px-2.5 py-0.5 rounded-full">Next.js</span>
                         <span class="bg-yellow-600/30 text-yellow-200 font-semibold text-xs px-2.5 py-0.5 rounded-full">Solidity</span>
                         <span class="bg-sky-600/30 text-sky-200 font-semibold text-xs px-2.5 py-0.5 rounded-full">Web3 / Wagmi</span>
                     </div>
                     <div class="flex space-x-4">
-                        <a href="https://youtu.be/LatB3maYAnY?si=4Aj4bNCCBJrlsymS" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-200 font-medium flex items-center text-sm transition duration-300">Demo Video</a>
-                        <a href="https://github.com/Saikrishna-dev-oss/NFT-marketplace-lite/tree/main/DApp" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white font-medium flex items-center text-sm transition duration-300">Code</a>
+                        <!-- PROJECTS ACCENT: VIOLET (Links) --><a href="https://youtu.be/LatB3maYAnY?si=4Aj4bNCCBJrlsymS" target="_blank" rel="noopener noreferrer" class="text-violet-400 hover:text-violet-200 font-medium flex items-center text-sm transition duration-300">Demo Video</a>
+                        <a href="https://github.com/Saikrishna-dev-oss/NFT-marketplace-lite/tree/main/DApp" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white font-medium flex items-center text-sm transition duration-300">Code</a>
                     </div>
                 </div>
 
                 
                 <div class="bg-gray-900/70 p-6 rounded-xl project-card">
-                    <h3 class="text-xl font-bold text-blue-400 mb-3">Slot Machine Game (Java CLI)</h3>
-                    <p class="text-gray-400 mb-4 text-sm">
+                    <!-- PROJECTS ACCENT: VIOLET --><h3 class="text-xl font-bold text-violet-400 mb-3">Slot Machine Game (Java CLI)</h3>
+                    <p class="text-gray-300 mb-4 text-sm">
                         A command-line Slot Machine built in **Java** featuring betting logic, emoji-based reels, and a dynamic summary board that tracks detailed gameplay statistics, demonstrating core Java skills and object-oriented design.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-4 mt-4">
@@ -134,15 +197,15 @@
                         <span class="bg-teal-600/30 text-teal-200 font-semibold text-xs px-2.5 py-0.5 rounded-full">CLI App</span>
                     </div>
                     <div class="flex space-x-4">
-                        <a href="https://github.com/Saikrishna-dev-oss/SLOT-MACHINE-JAVA" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-200 font-medium flex items-center text-sm transition duration-300">Read More</a>
-                        <a href="https://github.com/Saikrishna-dev-oss/SLOT-MACHINE-JAVA" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white font-medium flex items-center text-sm transition duration-300">Code</a>
+                        <!-- PROJECTS ACCENT: VIOLET (Links) --><a href="https://github.com/Saikrishna-dev-oss/SLOT-MACHINE-JAVA" target="_blank" rel="noopener noreferrer" class="text-violet-400 hover:text-violet-200 font-medium flex items-center text-sm transition duration-300">Read More</a>
+                        <a href="https://github.com/Saikrishna-dev-oss/SLOT-MACHINE-JAVA" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white font-medium flex items-center text-sm transition duration-300">Code</a>
                     </div>
                 </div>
 
 
                 <div class="bg-gray-900/70 p-6 rounded-xl project-card">
-                    <h3 class="text-xl font-bold text-blue-400 mb-3">Tic Tac Toe (C Console App)</h3>
-                    <p class="text-gray-400 mb-4 text-sm">
+                    <!-- PROJECTS ACCENT: VIOLET --><h3 class="text-xl font-bold text-violet-400 mb-3">Tic Tac Toe (C Console App)</h3>
+                    <p class="text-gray-300 mb-4 text-sm">
                         A classic console-based Tic Tac Toe game implemented purely in **C**. It features two-player mode, robust input validation, and clear algorithm logic for game state and win detection, demonstrating foundational programming mastery.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-4 mt-4">
@@ -151,8 +214,8 @@
                         <span class="bg-teal-600/30 text-teal-200 font-semibold text-xs px-2.5 py-0.5 rounded-full">Algorithms</span>
                     </div>
                     <div class="flex space-x-4">
-                        <a href="https://github.com/Saikrishna-dev-oss/TicTacToe" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-200 font-medium flex items-center text-sm transition duration-300">Read More</a>
-                        <a href="https://github.com/Saikrishna-dev-oss/TicTacToe" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white font-medium flex items-center text-sm transition duration-300">Code</a>
+                        <!-- PROJECTS ACCENT: VIOLET (Links) --><a href="https://github.com/Saikrishna-dev-oss/TicTacToe" target="_blank" rel="noopener noreferrer" class="text-violet-400 hover:text-violet-200 font-medium flex items-center text-sm transition duration-300">Read More</a>
+                        <a href="https://github.com/Saikrishna-dev-oss/TicTacToe" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white font-medium flex items-center text-sm transition duration-300">Code</a>
                     </div>
                 </div>
             </div>
@@ -160,10 +223,10 @@
 
         
         <section id="skills" class="py-16">
-            <h2 class="text-4xl font-bold text-center mb-12 text-blue-400 ai-glow">My Core Skills & Stack</h2>
+            <!-- FINAL UNIQUE SKILLS GRADIENT: Electric Cyan to Bright Gold --><h2 class="text-4xl font-bold text-center mb-12 skills-gradient ai-glow">My Core Skills & Stack</h2>
             
             <div class="max-w-5xl mx-auto flex flex-wrap justify-center gap-4">
-                <span class="bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg shadow-md">Python (Specialist)</span>
+                <!-- PRIMARY ACCENT (Python Tag): LIME GREEN for consistency with main button --><span class="bg-lime-500 text-gray-900 font-semibold px-4 py-2 rounded-lg shadow-md">Python (Specialist)</span>
                 <span class="bg-yellow-700 text-white font-semibold px-4 py-2 rounded-lg shadow-md">Java</span>
                 <span class="bg-purple-600 text-white font-semibold px-4 py-2 rounded-lg shadow-md">C/C++</span>
                 <span class="bg-emerald-600 text-white font-semibold px-4 py-2 rounded-lg shadow-md">SQL</span>
@@ -179,32 +242,32 @@
                 <span class="bg-yellow-400 text-gray-900 font-semibold px-4 py-2 rounded-lg shadow-md">Web3 / Wagmi</span>
             </div>
 
-            <p class="text-center text-gray-400 mt-10">
+            <p class="text-center text-gray-300 mt-10">
                 I'm currently expanding into **Flask and API development**, focusing on bridging code with connectivity and building systems with maximum clarity and scalability.
             </p>
         </section>
 
         
         <section id="contact" class="py-16">
-            <h2 class="text-4xl font-bold text-center mb-12 text-blue-400 ai-glow">Let's Connect</h2>
+            <!-- UPDATED CONTACT ACCENT: Metallic Silver to Deep Violet Gradient --><h2 class="text-4xl font-bold text-center mb-12 contact-gradient ai-glow">Let's Connect</h2>
             
             <div class="max-w-xl mx-auto bg-gray-900/70 p-8 rounded-xl shadow-2xl project-card">
-                <p class="text-gray-300 text-center mb-6">
+                <p class="text-white text-center mb-6">
                     Let's connect if clean code, clever interfaces, and algorithmic adventures excite you—we’re already speaking the same language!
                 </p>
 
                 <div class="space-y-4">
                     
-                    <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-lg text-gray-300">
-                        <a href="mailto:mangalisaikrishna003@gmail.com" class="flex items-center hover:text-blue-400 transition duration-300">
+                    <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-lg text-gray-200">
+                        <!-- UNIQUE ACCENT: ORANGE (Hover) --><a href="mailto:mangalisaikrishna003@gmail.com" class="flex items-center hover:text-orange-400 transition duration-300">
                             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                             Email
                         </a>
-                        <a href="https://linkedin.com/in/mangali-sai-krishna" target="_blank" rel="noopener noreferrer" class="flex items-center hover:text-blue-400 transition duration-300">
+                        <a href="https://linkedin.com/in/mangali-sai-krishna" target="_blank" rel="noopener noreferrer" class="flex items-center hover:text-orange-400 transition duration-300">
                             <i class="fab fa-linkedin w-5 h-5 mr-2 text-current"></i>
                             LinkedIn
                         </a>
-                        <a href="https://github.com/Saikrishna-dev-oss" target="_blank" rel="noopener noreferrer" class="flex items-center hover:text-blue-400 transition duration-300">
+                        <a href="https://github.com/Saikrishna-dev-oss" target="_blank" rel="noopener noreferrer" class="flex items-center hover:text-orange-400 transition duration-300">
                             <i class="fab fa-github w-5 h-5 mr-2 text-current"></i>
                             Saikrishna-dev-oss
                         </a>
@@ -216,7 +279,7 @@
     </main>
 
     
-    <footer class="mt-16 py-8 border-t border-gray-700 text-center text-gray-500">
+    <footer class="mt-16 py-8 border-t border-gray-700 text-center text-gray-400">
         <p>&copy; 2024 Mangali Sai Krishna. All rights reserved. | Built with HTML & Tailwind CSS.</p>
     </footer>
 </body>

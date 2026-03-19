@@ -43,8 +43,8 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
-        <div class="glass-card mx-auto max-w-5xl mt-6 px-6 py-4 rounded-full flex justify-between items-center">
+    <nav class="fixed w-full z-50 top-0 px-4 pt-4" id="navbar">
+        <div id="navPill" class="nav-pill glass-card mx-auto max-w-5xl px-6 py-4 rounded-full flex justify-between items-center">
             <a href="index.html" class="font-display font-bold text-xl tracking-tighter text-slate-800">
                 M<span class="text-indigo-600">.</span>S<span class="text-indigo-600">.</span>K
             </a>
@@ -82,7 +82,7 @@
                 </h1>
 
                 <p class="text-lg text-slate-600 mb-10 max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed">
-                    I'm <strong>Mangali Sai Krishna</strong>. An AI/ML developer merging foundational logic with deep learning. Specializing in modular architectures, predictive modeling, and highly optimized data pipelines.
+                    I'm <strong>Mangali Sai Krishna (MSK)</strong>. An AI/ML developer merging foundational logic with deep learning. Specializing in modular architectures, predictive modeling, and highly optimized data pipelines.
                 </p>
 
                 <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4">
@@ -107,8 +107,8 @@
 
                     <!-- Floating badges -->
                     <div class="absolute -right-4 top-10 glass-card p-3 rounded-2xl flex items-center gap-3 shadow-lg" style="animation: float 6s ease-in-out infinite; animation-delay: 1s;">
-                        <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600"><i class="fab fa-python text-lg"></i></div>
-                        <div class="text-xs font-bold text-slate-700">Python Stack</div>
+                        <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600"><i class="fas fa-brain text-lg"></i></div>
+                        <div class="text-xs font-bold text-slate-700">Machine Learning</div>
                     </div>
                     <div class="absolute -left-8 bottom-20 glass-card p-3 rounded-2xl flex items-center gap-3 shadow-lg" style="animation: float 6s ease-in-out infinite; animation-delay: 2s;">
                         <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600"><i class="fas fa-network-wired text-lg"></i></div>
@@ -176,10 +176,10 @@
         }, { threshold: 0.15 });
         revealEls.forEach(el => io.observe(el));
 
-        // Navbar shrink
-        const navbar = document.getElementById('navbar');
+        // Sticky navbar blur on scroll
+        const navPill = document.getElementById('navPill');
         window.addEventListener('scroll', () => {
-            navbar.classList.toggle('shadow-md', window.scrollY > 50);
+            navPill.classList.toggle('nav-scrolled', window.scrollY > 50);
         });
     </script>
 </body>

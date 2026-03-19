@@ -39,7 +39,7 @@
 
     <!-- Navigation -->
     <nav class="fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
-        <div class="glass-card mx-auto max-w-5xl mt-6 px-6 py-4 rounded-full flex justify-between items-center">
+        <div id="navPill" class="nav-pill glass-card mx-auto max-w-5xl mt-6 px-6 py-4 rounded-full flex justify-between items-center">
             <a href="index.html" class="font-display font-bold text-xl tracking-tighter text-slate-800">
                 M<span class="text-indigo-600">.</span>S<span class="text-indigo-600">.</span>K
             </a>
@@ -188,7 +188,7 @@
         }, { threshold: 0.1 });
         revealEls.forEach(el => io.observe(el));
         window.addEventListener('scroll', () => {
-            document.getElementById('navbar').classList.toggle('shadow-md', window.scrollY > 50);
+            document.getElementById('navPill').classList.toggle('nav-scrolled', window.scrollY > 50);
         });
     </script>
 </body>

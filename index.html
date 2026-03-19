@@ -1,619 +1,186 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mangali Sai Krishna - Modular Systems & AI/ML Portfolio</title>
-    
-    <!-- Placeholder for Favicon, assumes "assets/favicon.png" exists -->
+    <title>Mangali Sai Krishna (MSK) | AI & Systems Architect</title>
+    <meta name="description" content="Portfolio of Mangali Sai Krishna (MSK) — AI/ML developer specializing in modular architectures, predictive modeling, and deep learning.">
     <link rel="icon" type="image/png" href="assets/favicon.png">
-    
-    <!-- Tailwind CSS CDN -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" />
-
-    <style type="text/css">
-        /* Global Typography and Background */
-        body {
-            font-family: 'Roboto', sans-serif;
-            scroll-behavior: smooth;
-            background-color: #030712; 
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'gradient-x': 'gradient-x 5s linear infinite',
+                    }
+                }
+            }
         }
-        h1, h2, h3, .text-xl, nav a {
-            font-family: 'Poppins', sans-serif;
-            letter-spacing: -0.01em;
-        }
-        .ai-glow {
-            text-shadow: 0 0 8px currentColor;
-            opacity: 0.9;
-        }
-
-        /* --- VIDEO BACKGROUND STYLES --- */
-        #background-video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -2; 
-            overflow: hidden;
-            object-fit: cover;
-        }
-
-        /* Dark Overlay for text readability */
-        #video-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            min-width: 100%;
-            min-height: 100%;
-            background: linear-gradient(135deg, rgba(16, 23, 42, 0.7) 0%, rgba(3, 7, 18, 0.95) 100%);
-            z-index: -1; 
-        }
-        /* --- END VIDEO BACKGROUND STYLES --- */
-
-
-        /* Gradient and Glow Styles (retained) */
-        .text-gradient {
-            background-image: linear-gradient(90deg, #ec4899 0%, #a855f7 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            color: transparent;
-        }
-        .nav-link-hover:hover {
-            background-image: linear-gradient(90deg, #ec4899 0%, #a855f7 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 0 6px rgba(168, 85, 247, 0.5); 
-        }
-        
-        /* HEADER LOGO GLOW */
-        .header-logo-glow { 
-            text-shadow: 0 0 10px rgba(236, 72, 153, 0.6), 0 0 15px rgba(168, 85, 247, 0.5);
-            opacity: 1; 
-        }
-        
-        .home-headline-glow { text-shadow: 0 0 10px rgba(168, 85, 247, 0.7); opacity: 1; }
-
-        /* --- NEW BUTTON STYLES: NEON GLOW BORDER --- */
-        .btn-neon-primary {
-            position: relative;
-            overflow: hidden;
-            /* Creates a gradient border effect by using padding-box and border-box */
-            border: 2px solid transparent; 
-            background: linear-gradient(#030712, #030712) padding-box,
-                        linear-gradient(45deg, #06b6d4, #a855f7) border-box; /* Blue/Purple Gradient Border */
-            color: #ffffff;
-            font-weight: 700;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            box-shadow: 0 0 0px rgba(168, 85, 247, 0); 
-            letter-spacing: 0.05em;
-        }
-        .btn-neon-primary:hover {
-            background: linear-gradient(#080c18, #080c18) padding-box,
-                        linear-gradient(45deg, #a855f7, #06b6d4) border-box; /* Reverse gradient on hover */
-            box-shadow: 0 0 18px rgba(6, 182, 212, 0.8), 0 0 8px rgba(168, 85, 247, 0.9); /* Stronger glow on hover */
-            transform: translateY(-2px) scale(1.02); /* Dynamic lift effect */
-        }
-        /* --- END NEW BUTTON STYLES --- */
-        
-        /* --- NEW AFFILIATION CARD STYLES --- */
-        .affiliation-card {
-            /* Base styling using gradient border technique */
-            position: relative;
-            overflow: hidden;
-            /* Inner color and subtle border */
-            background: linear-gradient(#111827, #111827) padding-box, 
-                        linear-gradient(45deg, #1f2937, #1f2937) border-box; 
-            border: 2px solid transparent; 
-            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Base shadow */
-            cursor: default;
-        }
-
-        .affiliation-card:hover {
-            /* Dynamic lift, scale, and NEON GLOW matching button style */
-            transform: translateY(-5px) scale(1.05); 
-            
-            /* Neon Border matching button hover */
-            background: linear-gradient(#080c18, #080c18) padding-box,
-                        linear-gradient(45deg, #a855f7, #06b6d4) border-box; 
-            
-            /* Neon Glow matching button hover */
-            box-shadow: 0 0 18px rgba(6, 182, 212, 0.8), 0 0 8px rgba(168, 85, 247, 0.9);
-        }
-        /* Icon Hover Effect */
-        .affiliation-card:hover i {
-            filter: drop-shadow(0 0 8px currentColor);
-            transition: filter 0.3s ease-out;
-        }
-        /* Text Hover Effect */
-        .affiliation-card:hover p {
-            color: #fff !important; 
-        }
-        /* --- END AFFILIATION CARD STYLES --- */
-
-
-        .skills-gradient {
-            background-image: linear-gradient(90deg, #06b6d4 0%, #facc15 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            color: transparent;
-        }
-        .contact-gradient {
-            background-image: linear-gradient(90deg, #ec4899 0%, #a855f7 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            color: transparent;
-        }
-        .project-card {
-            border: 1px solid #1F2937;
-            transition: all 0.3s ease;
-        }
-        .project-card:hover {
-            /* CHANGED TO VIOLET/PURPLE GLOW */
-            border-color: #a855f7; 
-            box-shadow: 0 0 20px rgba(168, 85, 247, 0.6); 
-            transform: scale(1.02);
-        }
-        .project-image-placeholder {
-            background: linear-gradient(145deg, #1f2937, #111827);
-            border: 1px solid #0e7490;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            height: 180px;
-            overflow: hidden;
-            border-radius: 0.75rem; 
-        }
-
-        /* --- CORE ANIMATION STYLES --- */
-        @keyframes fade-in {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-hero-load {
-            animation: fade-in 0.6s ease-out forwards;
-        }
-        @keyframes slide-up {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .scroll-reveal {
-            opacity: 0; 
-            transform: translateY(20px);
-            transition: opacity 0.4s ease-out, transform 0.4s ease-out;
-            animation: none;
-        }
-        .scroll-reveal.animate {
-            animation: slide-up 0.4s ease-out forwards;
-        }
-        
-        /* Contact card border style using the primary gradient */
-        .contact-card-gradient-border {
-            border: 2px solid transparent;
-            border-image: linear-gradient(45deg, #ec4899, #a855f7) 1;
-            box-shadow: 0 0 30px rgba(168, 85, 247, 0.4);
-            transition: all 0.3s ease;
-        }
-        
-        /* NEW: Contact Link Styling */
-        .contact-link-icon {
-            font-size: 1.6rem; 
-            margin-right: 0.5rem; 
-            text-shadow: 0 0 5px currentColor;
-        }
-
-        /* Styles for the single-line contact block */
-        .contact-link-item {
-            display: flex;
-            align-items: center;
-            white-space: nowrap; 
-            flex-shrink: 0; 
-            font-weight: 700; 
-        }
-        
-        /* Discord specific hover for visual feedback */
-        .discord-link:hover .text-indigo-500 {
-            color: #818cf8;
-        }
-        
-        /* --- DYNAMIC STARTING PAGE EFFECTS --- */
-        @keyframes pulse-border {
-            0% { border-color: rgba(236, 72, 153, 0.4); box-shadow: 0 0 10px rgba(236, 72, 153, 0.4); }
-            50% { border-color: rgba(236, 72, 153, 0.8); box-shadow: 0 0 20px rgba(236, 72, 153, 0.8); }
-            100% { border-color: rgba(236, 72, 153, 0.4); box-shadow: 0 0 10px rgba(236, 72, 153, 0.4); }
-        }
-        .profile-container-pulse {
-            animation: pulse-border 3s infinite ease-in-out; 
-            transition: box-shadow 0.3s ease-in-out;
-            position: relative;
-            z-index: 10;
-        }
-        .profile-container-pulse:hover {
-            box-shadow: 0 0 30px rgba(236, 72, 153, 1), 0 0 50px rgba(168, 85, 247, 0.5); 
-        }
-        
-        /* NAME TYPING EFFECT */
-        @keyframes typing-name {
-            from { width: 0 }
-            to { width: 100% }
-        }
-        /* Simplified cursor-blink - will be controlled by JS for stopping */
-        @keyframes cursor-blink {
-            0%, 49% { border-right-color: #06b6d4; }
-            50%, 100% { border-right-color: transparent; }
-        }
-
-        .typing-name-container {
-            display: inline-block;
-            overflow: hidden;
-            white-space: nowrap; 
-            width: 0;
-            border-right: 2px solid #06b6d4; 
-            animation: 
-                typing-name 2s steps(28, end) 0.5s forwards,
-                cursor-blink 0.75s step-end infinite; /* Blinks infinitely until JS intervenes */
-            animation-delay: 0.5s;
-            text-shadow: 0 0 8px rgba(6, 182, 212, 0.8);
-        }
-        
-        /* --- SKILL TAG STYLES (Retained) --- */
-        .skill-tag {
-            color: #e2e8f0;
-            padding: 0.6rem 1.2rem;
-            border-radius: 9999px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            cursor: default;
-            margin-bottom: 0.5rem;
-        }
-        .skill-tag:hover {
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 0 25px rgba(168, 85, 247, 0.7), 0 8px 20px rgba(0, 0, 0, 0.5); 
-            color: white; 
-        }
-        .tag-ml-framework { background: linear-gradient(135deg, #10b981, #0d9488); } 
-        .tag-ml-deep { background: linear-gradient(135deg, #ec4899, #d946ef); } 
-        .tag-core-python { background: linear-gradient(135deg, #fbbf24, #f59e0b); color: #1f2937; } 
-        .tag-core-dsa { background: linear-gradient(135deg, #0ea5e9, #0284c7); } 
-        .tag-core-c { background: linear-gradient(135deg, #a855f7, #9333ea); } 
-        .tag-core-lang { background: linear-gradient(135deg, #f97316, #ea580c); }
-        .tag-core-regex { background: linear-gradient(135deg, #ef4444, #dc2626); } 
-        .tag-web-modular { background: linear-gradient(135deg, #6366f1, #4f46e5); } 
-        .tag-web-nextjs { background: linear-gradient(135deg, #06b6d4, #0891b2); } 
-        
-    </style>
+    </script>
+    <link rel="stylesheet" href="style.css">
 </head>
+<body class="antialiased relative selection:bg-indigo-200 selection:text-indigo-900">
 
-<body class="text-white min-h-screen">
-    
-    <!-- Using a placeholder video URL since local assets are not supported -->
-    <video autoplay loop muted playsinline id="background-video">
-        <source src="https://assets.mixkit.co/videos/preview/mixkit-digital-code-on-a-black-screen-1473-large.mp4" type="video/mp4" onerror="this.onerror=null; this.parentElement.style.display='none';">
-        Your browser does not support the video tag.
-    </video>
-    
-    <div id="video-overlay"></div>
+    <!-- Background -->
+    <div class="fixed inset-0 z-[-1] overflow-hidden">
+        <div class="grid-overlay"></div>
+        <div class="ambient-orb orb-1"></div>
+        <div class="ambient-orb orb-2"></div>
+        <div class="ambient-orb orb-3"></div>
+    </div>
 
-
-    <header id="header" class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-sm shadow-xl animate-hero-load" style="animation-delay: 0.1s;">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <a href="#home" class="text-xl font-extrabold text-gradient header-logo-glow transition duration-300">
-                    M. Sai Krishna (AI/ML)
-                </a>
-                <nav class="hidden md:flex space-x-8 items-center">
-                    <a href="#home" class="text-gray-300 font-medium transition duration-300 nav-link-hover">About</a>
-                    <a href="#affiliations" class="text-gray-300 font-medium transition duration-300 nav-link-hover">Affiliations</a>
-                    <a href="#projects" class="text-gray-300 font-medium transition duration-300 nav-link-hover">Projects</a>
-                    <a href="#skills" class="text-gray-300 font-medium transition duration-300 nav-link-hover">Skills</a>
-                    <a href="#contact" class="text-gray-300 font-medium transition duration-300 nav-link-hover">Contact</a>
-                </nav>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
+        <div class="glass-card mx-auto max-w-5xl mt-6 px-6 py-4 rounded-full flex justify-between items-center">
+            <a href="index.html" class="font-display font-bold text-xl tracking-tighter text-slate-800">
+                M<span class="text-indigo-600">.</span>S<span class="text-indigo-600">.</span>K
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                <a href="about.html"    class="hover:text-indigo-600 transition-colors">About</a>
+                <a href="projects.html" class="hover:text-indigo-600 transition-colors">Projects</a>
+                <a href="skills.html"   class="hover:text-indigo-600 transition-colors">Skills</a>
+                <a href="contact.html"  class="hover:text-indigo-600 transition-colors">Contact</a>
             </div>
+            <a href="contact.html" class="hidden md:block btn-premium text-sm py-2 px-5">Get in touch</a>
+            <button id="menuBtn" class="md:hidden text-slate-800"><i class="fas fa-bars text-xl"></i></button>
         </div>
-    </header>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden glass-card mx-4 mt-2 px-6 py-4 rounded-2xl flex flex-col gap-4 text-sm font-medium text-slate-600">
+            <a href="about.html"    class="hover:text-indigo-600 transition-colors">About</a>
+            <a href="projects.html" class="hover:text-indigo-600 transition-colors">Projects</a>
+            <a href="skills.html"   class="hover:text-indigo-600 transition-colors">Skills</a>
+            <a href="contact.html"  class="hover:text-indigo-600 transition-colors">Contact</a>
+        </div>
+    </nav>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 animate-hero-load" style="animation-delay: 0.2s;">
-        
-        <section id="home" class="pt-24 pb-16 flex flex-col md:flex-row items-center justify-between space-y-10 md:space-y-0 md:space-x-12 min-h-[70vh]">
-            
-            <div class="md:w-3/5 text-center md:text-left">
-                <span class="inline-block bg-teal-500 text-teal-900 text-xs font-bold px-3 py-1 rounded-full mb-3 shadow-md tracking-wider">
-                    A.I. RESEARCH & DEVELOPMENT
-                </span>
-                
-                <p id="typing-text" class="text-xl text-cyan-400 font-semibold mb-3">
-                    <span class="typing-name-container">Hello, I'm Mangali Sai Krishna</span>
-                </p>
-                
-                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-4 leading-tight">
-                    Modular Systems Architect <span class="text-gradient home-headline-glow">&amp; AI/ML Developer</span>
+    <!-- Hero -->
+    <main class="max-w-6xl mx-auto px-6 pt-40 pb-20">
+        <section id="home" class="min-h-[80vh] flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-8 pt-10">
+
+            <div class="w-full lg:w-3/5 text-center lg:text-left z-10">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-indigo-100 bg-indigo-50/80 backdrop-blur-sm text-sm font-semibold text-indigo-700 mb-6" style="animation: float 6s ease-in-out infinite;">
+                    <span class="w-2 h-2 rounded-full bg-indigo-500" style="animation: pulse 2s cubic-bezier(0.4,0,0.6,1) infinite;"></span>
+                    AI/ML Systems Architect
+                </div>
+
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold font-display leading-[1.1] mb-6 drop-shadow-sm">
+                    <span class="text-slate-800">Engineering</span><br>
+                    <span class="text-gradient-accent">Intelligent Systems.</span>
                 </h1>
-                
-                <p class="text-lg text-gray-300 max-w-xl mx-auto md:mx-0 mt-6">
-                    I’m a second-year B.Tech student specializing in **Artificial Intelligence & Machine Learning**. My passion is bridging abstract logic and data science principles with scalable code, from recursive algorithms to full-fledged GUI applications.
+
+                <p class="text-lg text-slate-600 mb-10 max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed">
+                    I'm <strong>Mangali Sai Krishna</strong>. An AI/ML developer merging foundational logic with deep learning. Specializing in modular architectures, predictive modeling, and highly optimized data pipelines.
                 </p>
 
-                <p class="text-lg text-gray-300 max-w-xl mx-auto md:mx-0 mt-4">
-                    As a **Python Developer**, I build interactive **Tkinter** tools and demonstrate proficiency across **C/Java** fundamentals and advanced systems like **Web3** and **Flask REST API development**.
-                </p>
-                
-                <div class="mt-8 space-x-4">
-                    <!-- Updated button classes with new neon style -->
-                    <a href="#projects" class="inline-block px-8 py-3 rounded-xl transition duration-300 transform btn-neon-primary">View Projects</a>
-                    <a href="#contact" class="inline-block px-8 py-3 rounded-xl transition duration-300 transform btn-neon-primary">Connect</a>
+                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                    <a href="projects.html" class="btn-premium">Explore Work</a>
+                    <a href="https://github.com/Saikrishna-dev-oss" target="_blank" class="btn-secondary">
+                        <i class="fab fa-github text-lg"></i> GitHub Profile
+                    </a>
                 </div>
             </div>
 
-            
-            <div class="md:w-2/5 flex justify-center">
-                <!-- Profile Container - Reverting to image path with icon fallback -->
-                <div id="profile-container" class="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 bg-gray-800 rounded-full flex items-center justify-center border-2 md:border-4 border-fuchsia-500 shadow-2xl overflow-hidden profile-container-pulse">
-                    <img 
-                        src="assets/me1.jpg" 
-                        width="512" height="512"
-                        alt="Profile Photo of Mangali Sai Krishna" 
-                        loading="eager" 
-                        class="w-full h-full object-cover"
-                        onerror="this.onerror=null; document.getElementById('profile-container').innerHTML = '<i class=&quot;fas fa-microchip text-8xl text-fuchsia-400 opacity-90&quot; aria-label=&quot;AI and ML Icon&quot;></i>';"
-                    >
+            <!-- Profile Image -->
+            <div class="w-full lg:w-2/5 flex justify-center z-10 mb-10 lg:mb-0">
+                <div class="relative w-64 h-64 sm:w-80 sm:h-80 xl:w-96 xl:h-96">
+                    <div class="absolute inset-0 bg-indigo-300 rounded-full blur-[80px] opacity-40" style="animation: pulse 4s cubic-bezier(0.4,0,0.6,1) infinite;"></div>
+                    <div class="profile-ring w-full h-full shadow-2xl">
+                        <div class="w-full h-full">
+                            <img src="assets/me1.jpg" alt="Mangali Sai Krishna (MSK)"
+                                onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full flex items-center justify-center text-indigo-600 bg-indigo-50 rounded-full\'><i class=\'fas fa-brain text-7xl\'></i></div>';"
+                                class="w-full h-full object-cover rounded-full transition-all duration-700 ease-in-out border-4 border-white shadow-inner">
+                        </div>
+                    </div>
+
+                    <!-- Floating badges -->
+                    <div class="absolute -right-4 top-10 glass-card p-3 rounded-2xl flex items-center gap-3 shadow-lg" style="animation: float 6s ease-in-out infinite; animation-delay: 1s;">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600"><i class="fab fa-python text-lg"></i></div>
+                        <div class="text-xs font-bold text-slate-700">Python Stack</div>
+                    </div>
+                    <div class="absolute -left-8 bottom-20 glass-card p-3 rounded-2xl flex items-center gap-3 shadow-lg" style="animation: float 6s ease-in-out infinite; animation-delay: 2s;">
+                        <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600"><i class="fas fa-network-wired text-lg"></i></div>
+                        <div class="text-xs font-bold text-slate-700">Deep Learning</div>
+                    </div>
                 </div>
             </div>
+
         </section>
 
-
-        <section id="affiliations" class="py-16 border-t border-gray-800">
-            <h2 class="text-3xl font-bold text-center mb-10 text-violet-400 ai-glow scroll-reveal">Professional Affiliations & Recognition</h2>
-            <div id="affiliations-container" class="max-w-4xl mx-auto flex flex-wrap justify-center items-center gap-8 md:gap-12">
-                
-                <!-- AFFILIATION CARD 1: IEEE Member - Removed conflicting hover classes -->
-                <div class="flex flex-col items-center text-center p-4 rounded-xl affiliation-card scroll-reveal">
-                    <i class="fas fa-microchip text-6xl text-red-600 mb-2"></i>
-                    <p class="text-xl font-extrabold text-gray-100">IEEE Member</p>
-                    <p class="text-sm text-gray-400">Committed to advancing technology.</p>
+        <!-- Quick-nav cards -->
+        <section class="py-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+            <a href="about.html" class="glass-card card-glow-hover p-6 flex flex-col items-center text-center gap-4 group cursor-pointer no-underline">
+                <div class="w-12 h-12 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600 text-xl group-hover:scale-110 transition-transform"><i class="fas fa-user"></i></div>
+                <div>
+                    <div class="font-bold text-slate-800 mb-1">About</div>
+                    <div class="text-xs text-slate-500">Professional presence &amp; roles</div>
                 </div>
-                
-                <!-- AFFILIATION CARD 2: Team Collaboration - Removed conflicting hover classes -->
-                <div class="flex flex-col items-center text-center p-4 rounded-xl affiliation-card scroll-reveal">
-                    <i class="fas fa-handshake text-6xl text-lime-500 mb-2"></i>
-                    <p class="text-xl font-extrabold text-gray-100">Team Collaboration</p>
-                    <p class="text-sm text-gray-400">Experience in successful joint development projects.</p>
+                <i class="fas fa-arrow-right text-indigo-400 text-sm mt-auto"></i>
+            </a>
+            <a href="projects.html" class="glass-card card-glow-hover p-6 flex flex-col items-center text-center gap-4 group cursor-pointer no-underline">
+                <div class="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center text-purple-600 text-xl group-hover:scale-110 transition-transform"><i class="fas fa-code"></i></div>
+                <div>
+                    <div class="font-bold text-slate-800 mb-1">Projects</div>
+                    <div class="text-xs text-slate-500">Featured technical work</div>
                 </div>
-                
-                <!-- AFFILIATION CARD 3: 4+ Languages - Removed conflicting hover classes -->
-                <div class="flex flex-col items-center text-center p-4 rounded-xl affiliation-card scroll-reveal">
-                    <i class="fas fa-code-branch text-6xl text-cyan-400 mb-2"></i>
-                    <p class="text-xl font-extrabold text-gray-100">4+ Languages</p>
-                    <p class="text-sm text-gray-400">Mastery across multiple platforms.</p>
+                <i class="fas fa-arrow-right text-purple-400 text-sm mt-auto"></i>
+            </a>
+            <a href="skills.html" class="glass-card card-glow-hover p-6 flex flex-col items-center text-center gap-4 group cursor-pointer no-underline">
+                <div class="w-12 h-12 rounded-xl bg-cyan-50 flex items-center justify-center text-cyan-600 text-xl group-hover:scale-110 transition-transform"><i class="fas fa-brain"></i></div>
+                <div>
+                    <div class="font-bold text-slate-800 mb-1">Skills</div>
+                    <div class="text-xs text-slate-500">Technical arsenal</div>
                 </div>
-            </div>
+                <i class="fas fa-arrow-right text-cyan-400 text-sm mt-auto"></i>
+            </a>
+            <a href="contact.html" class="glass-card card-glow-hover p-6 flex flex-col items-center text-center gap-4 group cursor-pointer no-underline">
+                <div class="w-12 h-12 rounded-xl bg-pink-50 flex items-center justify-center text-pink-600 text-xl group-hover:scale-110 transition-transform"><i class="fas fa-envelope"></i></div>
+                <div>
+                    <div class="font-bold text-slate-800 mb-1">Contact</div>
+                    <div class="text-xs text-slate-500">Let's build together</div>
+                </div>
+                <i class="fas fa-arrow-right text-pink-400 text-sm mt-auto"></i>
+            </a>
         </section>
-        
-        
-        <section id="projects" class="py-16">
-            <h2 class="text-4xl font-bold text-center mb-12 text-sky-300 ai-glow scroll-reveal">AI/ML & Core Systems Projects</h2>
-            
-            <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <div class="bg-gray-900/70 p-6 rounded-xl project-card scroll-reveal">
-                    <div class="project-image-placeholder mb-4">
-                        <i class="fas fa-cubes text-6xl text-fuchsia-500/70"></i> 
-                    </div>
-                    
-                    <h3 class="text-xl font-bold text-violet-400 mb-3">Advanced NFT Marketplace DApp</h3>
-                    <p class="text-gray-300 mb-4 text-sm">
-                        A robust, team-developed, full-stack decentralized application (DApp) built with **Next.js** and **Solidity**. It enables users to mint, list, and trade NFTs, integrating advanced features like wallet connection, IPFS storage, and a creator royalty system.
-                    </p>
-                    <p class="text-xs text-gray-500 mt-2 italic">*Team Collaboration Project with three other developers.*</p>
-                    <div class="flex flex-wrap gap-2 mb-4 mt-4">
-                        <span class="bg-violet-600/30 text-violet-200 font-semibold text-xs px-2.5 py-0.5 rounded-full">Next.js</span>
-                        <span class="bg-yellow-600/30 text-yellow-200 font-semibold text-xs px-2.5 py-0.5 rounded-full">Solidity</span>
-                        <span class="bg-sky-600/30 text-sky-200 font-semibold text-xs px-2.5 py-0.5 rounded-full">Web3 / Wagmi</span>
-                    </div>
-                    <div class="flex space-x-4">
-                        <a href="https://github.com/Saikrishna-dev-oss/NFT-marketplace-lite/tree/main/DApp" target="_blank" rel="noopener noreferrer" class="text-violet-400 hover:text-violet-200 font-medium flex items-center text-sm transition duration-300">
-                            <i class="fas fa-arrow-right mr-2"></i> View Project
-                        </a>
-                        <a href="https://github.com/Saikrishna-dev-oss/NFT-marketplace-lite/tree/main/DApp" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white font-medium flex items-center text-sm transition duration-300">Code</a>
-                    </div>
-                </div>
-
-                
-                <div class="bg-gray-900/70 p-6 rounded-xl project-card scroll-reveal">
-                    <div class="project-image-placeholder mb-4">
-                        <i class="fas fa-dice text-6xl text-red-500/70"></i>
-                    </div>
-                    
-                    <h3 class="text-xl font-bold text-violet-400 mb-3">Slot Machine Game (Java CLI)</h3>
-                    <p class="text-gray-300 mb-4 text-sm">
-                        A command-line Slot Machine built in **Java** featuring betting logic, emoji-based reels, and a dynamic summary board that tracks detailed gameplay statistics, demonstrating core Java skills and object-oriented design.
-                    </p>
-                    <p class="text-xs text-gray-500 mt-2 italic">*Self-Contained CLI Application.*</p>
-                    <div class="flex flex-wrap gap-2 mb-4 mt-4">
-                        <span class="bg-red-600/30 text-red-200 font-semibold text-xs px-2.5 py-0.5 rounded-full">Java</span>
-                        <span class="bg-gray-600/30 text-gray-200 font-semibold text-xs px-2.5 py-0.5 rounded-full">OOP</span>
-                        <span class="bg-teal-600/30 text-teal-200 font-semibold text-xs px-2.5 py-0.5 rounded-full">CLI App</span>
-                    </div>
-                    <div class="flex space-x-4">
-                        <a href="https://github.com/Saikrishna-dev-oss/SLOT-MACHINE-JAVA" target="_blank" rel="noopener noreferrer" class="text-violet-400 hover:text-violet-200 font-medium flex items-center text-sm transition duration-300">
-                             <i class="fas fa-arrow-right mr-2"></i> Read More
-                        </a>
-                        <a href="https://github.com/Saikrishna-dev-oss/SLOT-MACHINE-JAVA" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white font-medium flex items-center text-sm transition duration-300">Code</a>
-                    </div>
-                </div>
-
-
-                <div class="bg-gray-900/70 p-6 rounded-xl project-card scroll-reveal">
-                    <div class="project-image-placeholder mb-4">
-                        <i class="fas fa-gamepad text-6xl text-purple-500/70"></i>
-                    </div>
-                    
-                    <h3 class="text-xl font-bold text-violet-400 mb-3">Tic Tac Toe (C Console App)</h3>
-                    <p class="text-gray-300 mb-4 text-sm">
-                        A classic console-based Tic Tac Toe game implemented purely in **C**. It features two-player mode, robust input validation, and clear algorithm logic for game state and win detection, demonstrating foundational programming mastery.
-                    </p>
-                    <p class="text-xs text-gray-500 mt-2 italic">*Foundational C Programming Project.*</p>
-                    <div class="flex flex-wrap gap-2 mb-4 mt-4">
-                        <span class="bg-purple-600/30 text-purple-200 font-semibold text-xs px-2.5 py-0.5 rounded-full">C Language</span>
-                        <span class="bg-gray-600/30 text-gray-200 font-semibold text-xs px-2.5 py-0.5 rounded-full">Console App</span>
-                        <span class="bg-teal-600/30 text-teal-200 font-semibold text-xs px-2.5 py-0.5 rounded-full">Algorithms</span>
-                    </div>
-                    <div class="flex space-x-4">
-                        <a href="https://github.com/Saikrishna-dev-oss/TicTacToe" target="_blank" rel="noopener noreferrer" class="text-violet-400 hover:text-violet-200 font-medium flex items-center text-sm transition duration-300">
-                            <i class="fas fa-arrow-right mr-2"></i> Read More
-                        </a>
-                        <a href="https://github.com/Saikrishna-dev-oss/TicTacToe" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white font-medium flex items-center text-sm transition duration-300">Code</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        
-        <section id="skills" class="py-16">
-            <h2 class="text-4xl font-bold text-center mb-12 skills-gradient ai-glow scroll-reveal">My Core Skills & Stack</h2>
-            
-            <div id="skills-container" class="max-w-5xl mx-auto flex flex-wrap justify-center gap-4">
-                
-                <span class="skill-tag tag-core-python scroll-reveal">Python (Specialist)</span>
-                <span class="skill-tag tag-core-lang scroll-reveal">Java</span>
-                <span class="skill-tag tag-core-c scroll-reveal">C/C++</span>
-                <span class="skill-tag tag-core-dsa scroll-reveal">SQL</span>
-                <span class="skill-tag tag-core-dsa scroll-reveal">Data Structures & Algo</span>
-                <span class="skill-tag tag-core-regex scroll-reveal">Regex & Text Processing</span>
-                <span class="skill-tag tag-ml-framework scroll-reveal">Tkinter (GUI)</span>
-
-                <span class="skill-tag tag-ml-framework scroll-reveal">Scikit-learn</span>
-                <span class="skill-tag tag-ml-deep scroll-reveal">TensorFlow / Keras</span>
-                <span class="skill-tag tag-ml-deep scroll-reveal">Deep Learning (CNN/RNN)</span>
-                <span class="skill-tag tag-ml-data scroll-reveal">Pandas & NumPy</span>
-                
-                <span class="skill-tag tag-web-modular scroll-reveal">Flask & REST API</span>
-                <span class="skill-tag tag-web-nextjs scroll-reveal">Next.js / React</span>
-                <span class="skill-tag tag-ml-deep scroll-reveal">Solidity (Smart Contracts)</span>
-                <span class="skill-tag tag-web-modular scroll-reveal">Modular Architecture</span>
-
-            </div>
-
-            <p class="text-center text-gray-300 mt-10 scroll-reveal">
-                I'm currently focused on **Deep Learning frameworks** (TensorFlow/Keras) and building **scalable data pipelines** (Pandas/Scikit-learn), anchored by strong foundational C/Python skills.
-            </p>
-        </section>
-
-        
-        <section id="contact" class="py-16">
-            <h2 class="text-4xl font-bold text-center mb-12 text-gradient ai-glow scroll-reveal">Let's Connect</h2>
-            
-            <div class="max-w-2xl mx-auto bg-gray-900/70 p-8 rounded-xl contact-card-gradient-border scroll-reveal">
-                
-                <p class="text-white text-center mb-8 text-lg font-medium scroll-reveal">
-                    I'm actively seeking opportunities to build scalable systems. Reach out—let's discuss code, algorithms, or future projects!
-                </p>
-
-                <div class="space-y-6">
-                    
-                    <div class="flex items-center justify-between text-xl text-gray-200 gap-4">
-                        
-                        <a href="mailto:mangalisaikrishna003@gmail.com" class="contact-link-item hover:text-fuchsia-400 transition duration-300 text-fuchsia-300">
-                            <i class="fas fa-envelope contact-link-icon mr-1.5"></i>
-                            Email
-                        </a>
-                        
-                        <a href="https://linkedin.com/in/mangali-sai-krishna" target="_blank" rel="noopener noreferrer" class="contact-link-item hover:text-violet-400 transition duration-300 text-violet-300">
-                            <i class="fab fa-linkedin contact-link-icon mr-1.5"></i>
-                            LinkedIn
-                        </a>
-                        
-                        <a href="https://github.com/Saikrishna-dev-oss" target="_blank" rel="noopener noreferrer" class="contact-link-item hover:text-cyan-400 transition duration-300 text-cyan-300">
-                            <i class="fab fa-github contact-link-icon mr-1.5"></i>
-                            GitHub
-                        </a>
-
-                        <a href="https://discord.com/channels/saikrishna0821" target="_blank" rel="noopener noreferrer" class="contact-link-item discord-link hover:text-indigo-400 transition duration-300 text-indigo-300">
-                            <i class="fab fa-discord contact-link-icon mr-1.5"></i>
-                            Discord
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
     </main>
 
-    
-    <footer class="mt-16 py-8 border-t border-gray-700 text-center text-gray-400">
-        <p>&copy; 2024 Mangali Sai Krishna. All rights reserved. | Built with HTML & Tailwind CSS.</p>
+    <!-- Footer -->
+    <footer class="border-t border-slate-200/80 py-8 text-center bg-white/80 backdrop-blur-lg">
+        <p class="text-sm text-slate-500 font-bold">
+            &copy; 2024 Mangali Sai Krishna (MSK). <span class="text-slate-400 font-medium">Designed with intent.</span>
+        </p>
     </footer>
 
     <script>
-        // --- Logic to stop the typing animation cursor ---
-        const nameContainer = document.querySelector('.typing-name-container');
-        if (nameContainer) {
-            // Typing duration is 2.0s (typing-name) + 0.5s (initial animation-delay) = 2.5s total.
-            // We use a small buffer (2550ms) to ensure the animation is finished.
-            setTimeout(() => {
-                // By setting border-right to none, we effectively hide the blinking caret.
-                nameContainer.style.borderRight = 'none';
-            }, 2550); 
-        }
-
-        // --- Existing Scroll Reveal Logic (Unmodified) ---
-        const animatedElements = document.querySelectorAll('.scroll-reveal');
-
-        const handleIntersection = (entries, observer) => {
-            entries.forEach(entry => {
-                const elementsToAnimate = [entry.target];
-                
-                // If the target is a container, look for children to animate
-                if (entry.target.id === 'affiliations-container' || entry.target.id === 'projects-container' || entry.target.id === 'skills-container') {
-                    // Collect all child elements to animate
-                    elementsToAnimate.splice(0, elementsToAnimate.length, ...entry.target.querySelectorAll('.scroll-reveal'));
-                }
-
-                if (entry.isIntersecting) {
-                    // RUN ANIMATION
-                    elementsToAnimate.forEach((el, index) => {
-                        el.style.animationDelay = `${index * 0.08}s`; 
-                        el.classList.add('animate');
-                    });
-                } else {
-                    // RESET ANIMATION
-                    elementsToAnimate.forEach(el => {
-                        el.classList.remove('animate');
-                        el.style.animationDelay = '';
-                    });
-                }
-            });
-        };
-
-        const observer = new IntersectionObserver(handleIntersection, { 
-            threshold: 0.1 
-        });
-        
-        // Observe all individual elements, AND also observe the container elements 
-        animatedElements.forEach(element => {
-            observer.observe(element);
+        // Mobile menu toggle
+        document.getElementById('menuBtn').addEventListener('click', () => {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
         });
 
-        // Explicitly observe the major containers to handle reset when the whole section scrolls out
-        document.querySelectorAll('#affiliations-container, #projects-container, #skills-container, #contact .contact-card-gradient-border').forEach(container => {
-             observer.observe(container);
-        });
+        // Reveal on scroll
+        const revealEls = document.querySelectorAll('.reveal');
+        const io = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
+        }, { threshold: 0.15 });
+        revealEls.forEach(el => io.observe(el));
 
+        // Navbar shrink
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('shadow-md', window.scrollY > 50);
+        });
     </script>
 </body>
 </html>

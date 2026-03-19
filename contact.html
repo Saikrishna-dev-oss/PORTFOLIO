@@ -23,7 +23,7 @@
     </div>
 
     <nav class="fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
-        <div class="glass-card mx-auto max-w-5xl mt-6 px-6 py-4 rounded-full flex justify-between items-center">
+        <div id="navPill" class="nav-pill glass-card mx-auto max-w-5xl mt-6 px-6 py-4 rounded-full flex justify-between items-center">
             <a href="index.html" class="font-display font-bold text-xl tracking-tighter text-slate-800">M<span class="text-indigo-600">.</span>S<span class="text-indigo-600">.</span>K</a>
             <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
                 <a href="about.html"    class="hover:text-indigo-600 transition-colors">About</a>
@@ -55,7 +55,7 @@
             <div class="page-badge"><i class="fas fa-envelope"></i> Get In Touch</div>
             <h1 class="text-4xl md:text-6xl font-extrabold font-display text-slate-800 mb-4">Let's Build the Future.</h1>
             <p class="text-slate-500 text-lg font-medium max-w-2xl mx-auto leading-relaxed">
-                <strong>Mangali Sai Krishna (MSK)</strong> is open to opportunities, collaborations, and interesting conversations about AI, systems, and technology.
+                <strong>I'm</strong> always open to new opportunities, collaborations, and engaging discussions about AI, systems, and technology.
             </p>
         </div>
 
@@ -116,14 +116,14 @@
     </main>
 
     <footer class="border-t border-slate-200/80 py-8 text-center bg-white/80 backdrop-blur-lg">
-        <p class="text-sm text-slate-500 font-bold">&copy; 2024 Mangali Sai Krishna (MSK). <span class="text-slate-400 font-medium">Designed with intent.</span></p>
+        <p class="text-sm text-slate-500 font-bold">&copy; 2026 Mangali Sai Krishna (MSK). <span class="text-slate-400 font-medium">Designed with intent.</span></p>
     </footer>
 
     <script>
         document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('hidden'));
         const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('active');}),{threshold:0.1});
         document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-        window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('shadow-md',window.scrollY>50));
+        window.addEventListener('scroll',()=>document.getElementById('navPill').classList.toggle('nav-scrolled',window.scrollY>50));
     </script>
 </body>
 </html>

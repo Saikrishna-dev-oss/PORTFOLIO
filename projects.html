@@ -39,7 +39,7 @@
 
     <!-- Navigation -->
     <nav class="fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
-        <div class="glass-card mx-auto max-w-5xl mt-6 px-6 py-4 rounded-full flex justify-between items-center">
+        <div id="navPill" class="nav-pill glass-card mx-auto max-w-5xl mt-6 px-6 py-4 rounded-full flex justify-between items-center">
             <a href="index.html" class="font-display font-bold text-xl tracking-tighter text-slate-800">
                 M<span class="text-indigo-600">.</span>S<span class="text-indigo-600">.</span>K
             </a>
@@ -73,35 +73,36 @@
         <!-- Page Hero -->
         <div class="page-hero reveal" style="padding-top:2rem;">
             <div class="page-badge"><i class="fas fa-code"></i> Portfolio</div>
-            <h1 class="text-4xl md:text-6xl font-extrabold font-display text-slate-800 mb-4">Featured Work</h1>
+            <h1 class="text-4xl md:text-6xl font-extrabold font-display text-slate-800 mb-4"> My Work</h1>
             <p class="text-slate-500 text-lg font-medium max-w-2xl mx-auto leading-relaxed">
-                A selection of technical implementations by <strong>MSK</strong> spanning blockchain, OOP, and low-level algorithmic design.
+                Technical research and implementations in Algorithmic Fairness and AI Safety, grounded in rigorous step-by-step logic.
             </p>
         </div>
 
         <!-- Project Grid -->
         <section class="py-12 reveal">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4">
+                
 
-                <!-- Project 1 -->
                 <div class="glass-card card-glow-hover overflow-hidden group flex flex-col h-full bg-white">
                     <div class="h-48 bg-slate-50 relative overflow-hidden flex items-center justify-center border-b border-slate-100">
                         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-slate-100/50 z-10"></div>
-                        <div class="absolute w-full h-full" style="background: radial-gradient(ellipse at center, rgba(168,85,247,0.1) 0%, transparent 70%);"></div>
-                        <i class="fab fa-ethereum text-7xl text-purple-600 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 z-20"></i>
+                        <div class="absolute w-full h-full" style="background: radial-gradient(ellipse at center, rgba(79, 70, 229, 0.1) 0%, transparent 70%);"></div>
+                        <i class="fas fa-scale-balanced text-7xl text-indigo-600 group-hover:scale-110 transition-all duration-500 z-20"></i>
                     </div>
                     <div class="p-8 flex-grow flex flex-col bg-white/50">
-                        <span class="text-xs font-bold uppercase tracking-wider text-purple-600 mb-1">Blockchain / Web3</span>
-                        <h3 class="text-2xl font-bold text-slate-800 mb-3">NFT Marketplace DApp</h3>
+                        <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 mb-1">AI Safety / Fairness Research</span>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-3">Credit Fairness Audit</h3>
                         <p class="text-slate-600 text-sm mb-6 flex-grow leading-relaxed">
-                            A highly robust Next.js and Solidity DApp for minting and trading NFTs. Incorporates wallet connection, IPFS, and precise creator-royalty logic.
+                            A technical audit of the German Credit Dataset focused on age-based algorithmic bias. Employs AIF360 and disparate impact analysis to mitigate systemic discrimination in financial ML models.
                         </p>
                         <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700">Next.js</span>
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700">Solidity</span>
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700">Wagmi</span>
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700">Python</span>
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700">AIF360</span>
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700">Bias Mitigation</span>
                         </div>
-                        <a href="https://github.com/Saikrishna-dev-oss/NFT-marketplace-lite/tree/main/DApp" target="_blank" class="text-purple-600 font-bold text-sm hover:text-purple-700 flex items-center gap-2 w-max transition-colors">
+                        <a href="https://github.com/Saikrishna-dev-oss/FAIRNESS-AUDIT-CREDIT-ML" target="_blank" class="text-indigo-600 font-bold text-sm hover:text-indigo-700 flex items-center gap-2 w-max transition-colors">
                             View Repository <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
                         </a>
                     </div>
@@ -155,8 +156,34 @@
                     </div>
                 </div>
 
+                <!-- Project 4 -->
+                <div class="glass-card card-glow-hover overflow-hidden group flex flex-col h-full bg-white">
+                    <div class="h-48 bg-slate-50 relative overflow-hidden flex items-center justify-center border-b border-slate-100">
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-slate-100/50 z-10"></div>
+                        <div class="absolute w-full h-full" style="background: radial-gradient(ellipse at center, rgba(168,85,247,0.1) 0%, transparent 70%);"></div>
+                        <i class="fab fa-ethereum text-7xl text-purple-600 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 z-20"></i>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col bg-white/50">
+                        <span class="text-xs font-bold uppercase tracking-wider text-purple-600 mb-1">Blockchain / Web3</span>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-3">NFT Marketplace DApp</h3>
+                        <p class="text-slate-600 text-sm mb-6 flex-grow leading-relaxed">
+                            A highly robust Next.js and Solidity DApp for minting and trading NFTs. Incorporates wallet connection, IPFS, and precise creator-royalty logic.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700">Next.js</span>
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700">Solidity</span>
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700">Wagmi</span>
+                        </div>
+                        <a href="https://github.com/Saikrishna-dev-oss/NFT-marketplace-lite/tree/main/DApp" target="_blank" class="text-purple-600 font-bold text-sm hover:text-purple-700 flex items-center gap-2 w-max transition-colors">
+                            View Repository <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                    </div>
+                </div>
+
             </div>
+                
         </section>
+
 
         <!-- CTA -->
         <div class="text-center py-8 reveal">
@@ -174,7 +201,7 @@
     <!-- Footer -->
     <footer class="border-t border-slate-200/80 py-8 text-center bg-white/80 backdrop-blur-lg">
         <p class="text-sm text-slate-500 font-bold">
-            &copy; 2024 Mangali Sai Krishna (MSK). <span class="text-slate-400 font-medium">Designed with intent.</span>
+            &copy; 2026 Mangali Sai Krishna (MSK). <span class="text-slate-400 font-medium">Designed with intent.</span>
         </p>
     </footer>
 
@@ -188,7 +215,7 @@
         }, { threshold: 0.1 });
         revealEls.forEach(el => io.observe(el));
         window.addEventListener('scroll', () => {
-            document.getElementById('navbar').classList.toggle('shadow-md', window.scrollY > 50);
+            document.getElementById('navPill').classList.toggle('nav-scrolled', window.scrollY > 50);
         });
     </script>
 </body>

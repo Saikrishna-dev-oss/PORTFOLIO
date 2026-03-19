@@ -39,7 +39,7 @@
 
     <!-- Navigation -->
     <nav class="fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
-        <div class="glass-card mx-auto max-w-5xl mt-6 px-6 py-4 rounded-full flex justify-between items-center">
+        <div id="navPill" class="nav-pill glass-card mx-auto max-w-5xl mt-6 px-6 py-4 rounded-full flex justify-between items-center">
             <a href="index.html" class="font-display font-bold text-xl tracking-tighter text-slate-800">
                 M<span class="text-indigo-600">.</span>S.K
             </a>
@@ -102,8 +102,16 @@
                     <div class="w-16 h-16 rounded-2xl bg-pink-50 flex items-center justify-center mb-6 text-pink-600 shadow-sm border border-pink-100">
                         <i class="fas fa-code-branch text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-800 mb-2">Core Dev Focus</h3>
-                    <p class="text-sm text-slate-600 leading-relaxed">Mastery in Python, C/C++, Java, and modern Web3 technologies — from low-level to full-stack.</p>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Technical Skills</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Strong Foundation in Python, C/C++, Java.</p>
+                </div>
+
+                <div class="glass-card card-glow-hover p-8 text-center flex flex-col items-center">
+                    <div class="w-16 h-16 rounded-2xl bg-pink-50 flex items-center justify-center mb-6 text-pink-600 shadow-sm border border-pink-100">
+                        <i class="fas fa-lightbulb text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Curiosity Driven</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">Exploring AI/ML not just as technology, but as a way to solve everyday problems and share knowledge.</p>
                 </div>
             </div>
         </section>
@@ -124,10 +132,9 @@
                     <div>
                         <h2 class="text-2xl font-extrabold font-display text-slate-800 mb-3">Mangali Sai Krishna <span class="text-indigo-600">(MSK)</span></h2>
                         <p class="text-slate-600 leading-relaxed mb-4">
-                            An AI/ML developer merging foundational logic with deep learning. Passionate about building modular, scalable systems that solve real-world problems—from predictive models to decentralized applications.
-                        </p>
+                            I'm Mangali Sai Krishna, a 2nd-year B.Tech student in Artificial Intelligence & Machine Learning. I'm deeply curious about how code and algorithms work behind the scenes, and I learn by tracing them step by step until I truly understand. As a machine learning enthusiast, I’m exploring the AI/ML world while building a strong foundation through projects, problem‑solving, and continuous learning.
                         <p class="text-slate-600 leading-relaxed">
-                            Currently pursuing advanced studies while actively leading technical communities, contributing to open-source, and exploring the intersection of AI safety and applied machine learning.
+                            My work focuses on the intersection of AI Safety and Applied Machine Learning, with a specific interest in algorithmic fairness and transparency. I prioritize deep-dive technical understanding over surface-level implementation.
                         </p>
                         <div class="flex flex-wrap gap-3 mt-6">
                             <a href="projects.html" class="btn-premium text-sm py-2 px-5">View Projects</a>
@@ -143,7 +150,7 @@
     <!-- Footer -->
     <footer class="border-t border-slate-200/80 py-8 text-center bg-white/80 backdrop-blur-lg">
         <p class="text-sm text-slate-500 font-bold">
-            &copy; 2024 Mangali Sai Krishna (MSK). <span class="text-slate-400 font-medium">Designed with intent.</span>
+            &copy; 2026 Mangali Sai Krishna (MSK). <span class="text-slate-400 font-medium">Designed with intent.</span>
         </p>
     </footer>
 
@@ -157,7 +164,7 @@
         }, { threshold: 0.1 });
         revealEls.forEach(el => io.observe(el));
         window.addEventListener('scroll', () => {
-            document.getElementById('navbar').classList.toggle('shadow-md', window.scrollY > 50);
+            document.getElementById('navPill').classList.toggle('nav-scrolled', window.scrollY > 50);
         });
     </script>
 </body>

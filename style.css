@@ -224,6 +224,31 @@ h1, h2, h3, h4, h5, h6, .font-display {
     margin-bottom: 1rem;
 }
 
+/* ---- Sticky Navbar ---- */
+.nav-pill {
+    transition: background 0.4s ease, box-shadow 0.4s ease,
+                border-color 0.4s ease, margin-top 0.35s ease,
+                padding 0.35s ease;
+}
+.nav-pill.nav-scrolled {
+    background: rgba(255, 255, 255, 0.94) !important;
+    backdrop-filter: blur(24px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+    box-shadow: 0 8px 32px rgba(99, 102, 241, 0.14),
+                0 2px 10px rgba(0, 0, 0, 0.06) !important;
+    border-color: rgba(99, 102, 241, 0.25) !important;
+    margin-top: 0.5rem !important;
+    padding-top: 0.6rem !important;
+    padding-bottom: 0.6rem !important;
+}
+
+/* ---- Section Divider ---- */
+.section-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(99,102,241,0.25), transparent);
+    margin: 0 2rem;
+}
+
 /* ---- Keyframes ---- */
 @keyframes blob {
     0%   { transform: translate(0px, 0px) scale(1); }

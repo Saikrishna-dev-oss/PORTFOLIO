@@ -23,9 +23,9 @@ Welcome to my personal portfolio repository — a showcase of my journey as a Mo
 
 ---
 
-## 🚀 Featured Projects
+## 🚀 Projects
 
-### 1. **Advanced NFT Marketplace DApp**
+### 1. **NFT Marketplace DApp**
 - **Description**: Full-stack DApp for minting, listing, and trading NFTs. Includes wallet integration, IPFS storage, and royalty logic.
 - **Stack**: Next.js (React), Solidity, Web3/Wagmi  
 - **Repo**: [`NFT-marketplace-lite`](https://github.com/Saikrishna-dev-oss/NFT-marketplace-lite)

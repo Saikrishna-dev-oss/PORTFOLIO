@@ -163,24 +163,6 @@
         </p>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        document.getElementById('menuBtn').addEventListener('click', () => {
-            document.getElementById('mobileMenu').classList.toggle('hidden');
-        });
-
-        // Reveal on scroll
-        const revealEls = document.querySelectorAll('.reveal');
-        const io = new IntersectionObserver(entries => {
-            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
-        }, { threshold: 0.15 });
-        revealEls.forEach(el => io.observe(el));
-
-        // Sticky navbar blur on scroll
-        const navPill = document.getElementById('navPill');
-        window.addEventListener('scroll', () => {
-            navPill.classList.toggle('nav-scrolled', window.scrollY > 50);
-        });
-    </script>
+    <script src="assets/js/site.js"></script>
 </body>
 </html>

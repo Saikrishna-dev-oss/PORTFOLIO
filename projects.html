@@ -205,18 +205,6 @@
         </p>
     </footer>
 
-    <script>
-        document.getElementById('menuBtn').addEventListener('click', () => {
-            document.getElementById('mobileMenu').classList.toggle('hidden');
-        });
-        const revealEls = document.querySelectorAll('.reveal');
-        const io = new IntersectionObserver(entries => {
-            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
-        }, { threshold: 0.1 });
-        revealEls.forEach(el => io.observe(el));
-        window.addEventListener('scroll', () => {
-            document.getElementById('navPill').classList.toggle('nav-scrolled', window.scrollY > 50);
-        });
-    </script>
+    <script src="assets/js/site.js"></script>
 </body>
 </html>

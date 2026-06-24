@@ -17,12 +17,44 @@
 
 /* Base */
 body {
-    background-color: #f8fafc;
+    background-color: #fbfbfd;
     color: #334155;
     overflow-x: hidden;
     font-family: 'Inter', sans-serif;
+    position: relative;
+    isolation: isolate;
     animation: pageEnter 0.55s cubic-bezier(0.4, 0, 0.2, 1) both;
     animation-delay: 0.05s;
+}
+
+html, body {
+    min-height: 100%;
+}
+
+.cursor-ambient-layer {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.95;
+}
+
+.cursor-ambient-layer canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.site-shell {
+    position: relative;
+    isolation: isolate;
+}
+
+body > :not(.cursor-ambient-layer) {
+    position: relative;
+    z-index: 1;
 }
 
 h1, h2, h3, h4, h5, h6, .font-display {

@@ -13,6 +13,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','sans-serif'],display:['Plus Jakarta Sans','sans-serif']}}}}</script>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+    (function(){
+        emailjs.init("CJ1r-KESuFitYoddK"); // EmailJS public key
+    })();
+    </script>
+
 </head>
 <body class="antialiased relative selection:bg-indigo-200 selection:text-indigo-900">
     <div class="fixed inset-0 z-[-1] overflow-hidden">
@@ -95,6 +102,40 @@
                 </div>
             </div>
         </section>
+        <!-- Contact Form -->
+        <section class="py-12 reveal">
+        <div class="glass-card max-w-3xl mx-auto p-12 text-center relative overflow-hidden card-glow-hover bg-white/70">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6"><i>Send Me a Message</i></h2>
+
+            <form id="contact-form" class="flex flex-col gap-4" autocomplete="on">
+            <input type="text" name="user_name" placeholder="Your Name" required
+                class="px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 outline-none">
+
+            <input type="email" name="user_email" placeholder="Your Email" required
+                class="px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 outline-none">
+
+            <input type="text" name="subject" placeholder="Subject (optional)"
+                class="px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 outline-none">
+
+            <textarea name="message" rows="5" placeholder="Your Message" required
+                class="px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
+
+            <div class="flex items-center gap-4">
+                <button id="sendBtn" type="submit"
+                class="btn-premium px-6 py-3 rounded-lg font-semibold bg-indigo-600 text-white hover:bg-indigo-700 transition-all">
+                Send Message
+                </button>
+                <div id="formStatus" class="text-sm text-slate-600"></div>
+            </div>
+            </form>
+
+            <!-- Toast (hidden by default) -->
+            <div id="toast" class="fixed bottom-8 right-8 hidden bg-slate-900 text-white px-4 py-3 rounded-lg shadow-lg">
+            <span id="toastMsg"></span>
+            </div>
+        </div>
+        </section>
+
 
         <!-- Contact Info Grid -->
         <section class="py-4 max-w-3xl mx-auto reveal">
@@ -122,7 +163,7 @@
                 </div>
             </div>
         </section>
-
+ 
     </main>
 
     <footer class="border-t border-slate-200/80 py-8 text-center bg-white/80 backdrop-blur-lg">
@@ -135,5 +176,64 @@
         document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
         window.addEventListener('scroll',()=>document.getElementById('navPill').classList.toggle('nav-scrolled',window.scrollY>50));
     </script>
+
+    <script>
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevents the default page reload
+
+        const btn = document.getElementById('sendBtn');
+        const toast = document.getElementById('toast');
+        const toastMsg = document.getElementById('toastMsg');
+
+        // 1. Update UI to show loading state
+        const originalBtnText = btn.innerText;
+        btn.innerText = 'Sending...';
+        btn.disabled = true;
+        btn.classList.add('opacity-70', 'cursor-not-allowed');
+
+        
+        emailjs.sendForm('service_31zkc2k', 'template_hyilyrp', this)
+            .then(function() {
+                // 3. Handle Success
+                btn.innerText = originalBtnText;
+                btn.disabled = false;
+                btn.classList.remove('opacity-70', 'cursor-not-allowed');
+
+                // Trigger Success Toast
+                toastMsg.innerText = 'Message sent successfully!';
+                toast.classList.remove('hidden', 'bg-slate-900');
+                toast.classList.add('flex', 'bg-green-600'); // Use flex for Tailwind centering if needed
+                
+                // Reset the form fields
+                document.getElementById('contact-form').reset();
+
+                // Hide Toast after 3 seconds
+                setTimeout(() => {
+                    toast.classList.add('hidden');
+                    toast.classList.remove('flex', 'bg-green-600');
+                    toast.classList.add('bg-slate-900'); // Reset to original state
+                }, 3000);
+
+            }, function(error) {
+                // 4. Handle Error
+                console.log('FAILED...', error);
+                btn.innerText = originalBtnText;
+                btn.disabled = false;
+                btn.classList.remove('opacity-70', 'cursor-not-allowed');
+
+                // Trigger Error Toast
+                toastMsg.innerText = 'Failed to send message. Please try again.';
+                toast.classList.remove('hidden', 'bg-slate-900');
+                toast.classList.add('flex', 'bg-rose-600');
+
+                // Hide Toast after 3 seconds
+                setTimeout(() => {
+                    toast.classList.add('hidden');
+                    toast.classList.remove('flex', 'bg-rose-600');
+                    toast.classList.add('bg-slate-900');
+                }, 3000);
+            });
+    });
+</script>
 </body>
 </html>

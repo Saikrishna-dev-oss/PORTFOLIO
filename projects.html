@@ -81,10 +81,102 @@
 
         <!-- Project Grid -->
         <section class="py-12 reveal">
-            <!-- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"> -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-7xl mx-auto px-4">
                 
+                <!-- Project 1: Hospital Bed Allocation -->
+                <div class="glass-card card-glow-hover overflow-hidden group flex flex-col h-full bg-white">
+                    <div class="h-48 bg-slate-50 relative overflow-hidden flex items-center justify-center border-b border-slate-100">
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-slate-100/50 z-10"></div>
+                        <div class="absolute w-full h-full" style="background: radial-gradient(ellipse at center, rgba(14, 165, 233, 0.1) 0%, transparent 70%);"></div>
+                        <i class="fas fa-bed-pulse text-7xl text-sky-600 group-hover:scale-110 transition-all duration-500 z-20"></i>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col bg-white/50">
+                        <span class="text-xs font-bold uppercase tracking-wider text-sky-600 mb-1">Constraint Satisfaction / Optimization</span>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-3">Hospital Bed Allocation</h3>
+                        <p class="text-slate-600 text-sm mb-6 flex-grow leading-relaxed">
+                            An intelligent resource optimization engine leveraging backtracking search and constraint satisfaction algorithms to allocate hospital beds dynamically based on triage severity, medical requirements, and ward availability.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700">Python</span>
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700">CSP Backtracking</span>
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700">Streamlit</span>
+                        </div>
+                        <div class="flex items-center gap-5 pt-2 border-t border-slate-100">
+                            <a href="https://hospital-bed-allocation.streamlit.app" target="_blank" rel="noopener noreferrer" class="text-sky-600 font-bold text-sm hover:text-sky-700 flex items-center gap-1.5 transition-colors">
+                                <i class="fas fa-arrow-up-right-from-square text-xs"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/Saikrishna-dev-oss/hospital-bed-allocation" target="_blank" rel="noopener noreferrer" class="text-slate-600 font-semibold text-sm hover:text-slate-900 flex items-center gap-1.5 transition-colors">
+                                <i class="fab fa-github text-sm"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Project 2: AI Code Review Agent -->
+                <div class="glass-card card-glow-hover overflow-hidden group flex flex-col h-full bg-white">
+                    <div class="h-48 bg-slate-50 relative overflow-hidden flex items-center justify-center border-b border-slate-100">
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-slate-100/50 z-10"></div>
+                        <div class="absolute w-full h-full" style="background: radial-gradient(ellipse at center, rgba(139, 92, 246, 0.1) 0%, transparent 70%);"></div>
+                        <i class="fas fa-code-branch text-7xl text-violet-600 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 z-20"></i>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col bg-white/50">
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="text-xs font-bold uppercase tracking-wider text-violet-600">Developer Tooling / Full-Stack AI</span>
+                            <span class="text-[11px] font-medium text-amber-700 bg-amber-50 border border-amber-200/60 px-2 py-0.5 rounded-md flex items-center gap-1">
+                                <i class="fas fa-laptop-code text-[10px]"></i> Local Setup
+                            </span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-3">AI Code Review Agent</h3>
+                        <p class="text-slate-600 text-sm mb-6 flex-grow leading-relaxed">
+                            An automated code intelligence platform featuring GitHub repository ingestion, Monaco editor integration, and LLM-assisted static code reviews for vulnerability detection and automated suggestions.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700">FastAPI</span>
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700">React / Vite</span>
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700">Monaco Editor</span>
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700">SQLite</span>
+                        </div>
+                        <div class="flex items-center gap-5 pt-2 border-t border-slate-100">
+                            <a href="https://github.com/Saikrishna-dev-oss/ai-code-reviewer-agent-frontend" target="_blank" rel="noopener noreferrer" class="text-violet-600 font-bold text-sm hover:text-violet-700 flex items-center gap-1.5 transition-colors">
+                                <i class="fab fa-github text-sm"></i> Frontend
+                            </a>
+                            <a href="https://github.com/Saikrishna-dev-oss/ai-code-reviewer-agent-backend" target="_blank" rel="noopener noreferrer" class="text-slate-600 font-semibold text-sm hover:text-slate-900 flex items-center gap-1.5 transition-colors">
+                                <i class="fab fa-github text-sm"></i> Backend
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Medical Insurance Cost Predictor -->
+                <div class="glass-card card-glow-hover overflow-hidden group flex flex-col h-full bg-white">
+                    <div class="h-48 bg-slate-50 relative overflow-hidden flex items-center justify-center border-b border-slate-100">
+                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-slate-100/50 z-10"></div>
+                        <div class="absolute w-full h-full" style="background: radial-gradient(ellipse at center, rgba(16, 185, 129, 0.1) 0%, transparent 70%);"></div>
+                        <i class="fas fa-file-medical text-7xl text-emerald-600 group-hover:scale-110 transition-all duration-500 z-20"></i>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col bg-white/50">
+                        <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 mb-1">Supervised Learning / Predictive ML</span>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-3">Medical Insurance Predictor</h3>
+                        <p class="text-slate-600 text-sm mb-6 flex-grow leading-relaxed">
+                            An end-to-end regression application that models healthcare expense trends based on demographic and lifestyle indicators. Includes real-time multi-currency conversions and feature impact analysis.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700">Scikit-Learn</span>
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700">Linear Regression</span>
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700">Streamlit</span>
+                        </div>
+                        <div class="flex items-center gap-5 pt-2 border-t border-slate-100">
+                            <a href="https://medical-insurance-predictor-msk.streamlit.app/" target="_blank" rel="noopener noreferrer" class="text-emerald-600 font-bold text-sm hover:text-emerald-700 flex items-center gap-1.5 transition-colors">
+                                <i class="fas fa-arrow-up-right-from-square text-xs"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/Saikrishna-dev-oss/medical-insurance-predictor" target="_blank" rel="noopener noreferrer" class="text-slate-600 font-semibold text-sm hover:text-slate-900 flex items-center gap-1.5 transition-colors">
+                                <i class="fab fa-github text-sm"></i> Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Fairness Credit ML -->
                 <div class="glass-card card-glow-hover overflow-hidden group flex flex-col h-full bg-white">
                     <div class="h-48 bg-slate-50 relative overflow-hidden flex items-center justify-center border-b border-slate-100">
                         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-slate-100/50 z-10"></div>
@@ -102,88 +194,16 @@
                             <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700">AIF360</span>
                             <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700">Bias Mitigation</span>
                         </div>
-                        <a href="https://github.com/Saikrishna-dev-oss/FAIRNESS-AUDIT-CREDIT-ML" target="_blank" class="text-indigo-600 font-bold text-sm hover:text-indigo-700 flex items-center gap-2 w-max transition-colors">
-                            View Repository <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="glass-card card-glow-hover overflow-hidden group flex flex-col h-full bg-white">
-                    <div class="h-48 bg-slate-50 relative overflow-hidden flex items-center justify-center border-b border-slate-100">
-                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-slate-100/50 z-10"></div>
-                        <div class="absolute w-full h-full" style="background: radial-gradient(ellipse at center, rgba(239,68,68,0.1) 0%, transparent 70%);"></div>
-                        <i class="fas fa-dice text-7xl text-red-500 group-hover:scale-110 group-hover:-rotate-12 transition-all duration-500 z-20"></i>
-                    </div>
-                    <div class="p-8 flex-grow flex flex-col bg-white/50">
-                        <span class="text-xs font-bold uppercase tracking-wider text-red-600 mb-1">OOP / Java</span>
-                        <h3 class="text-2xl font-bold text-slate-800 mb-3">Java Slot Machine</h3>
-                        <p class="text-slate-600 text-sm mb-6 flex-grow leading-relaxed">
-                            An elegant CLI Slot Machine employing precise OOP principles. Features betting systems, emoji reels, and deep post-game statistical logging.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700">Java</span>
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700">CLI</span>
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700">OOP design</span>
+                        <div class="flex items-center gap-5 pt-2 border-t border-slate-100">
+                            <a href="https://github.com/Saikrishna-dev-oss/FAIRNESS-AUDIT-CREDIT-ML" target="_blank" rel="noopener noreferrer" class="text-indigo-600 font-bold text-sm hover:text-indigo-700 flex items-center gap-1.5 transition-colors">
+                                <i class="fab fa-github text-sm"></i> View Repository <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                            </a>
                         </div>
-                        <a href="https://github.com/Saikrishna-dev-oss/SLOT-MACHINE-JAVA" target="_blank" class="text-red-600 font-bold text-sm hover:text-red-700 flex items-center gap-2 w-max transition-colors">
-                            View Repository <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="glass-card card-glow-hover overflow-hidden group flex flex-col h-full bg-white">
-                    <div class="h-48 bg-slate-50 relative overflow-hidden flex items-center justify-center border-b border-slate-100">
-                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-slate-100/50 z-10"></div>
-                        <div class="absolute w-full h-full" style="background: radial-gradient(ellipse at center, rgba(16,185,129,0.1) 0%, transparent 70%);"></div>
-                        <i class="fas fa-terminal text-7xl text-emerald-600 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 z-20"></i>
-                    </div>
-                    <div class="p-8 flex-grow flex flex-col bg-white/50">
-                        <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 mb-1">C Language / Algorithms</span>
-                        <h3 class="text-2xl font-bold text-slate-800 mb-3">C-Engine TicTacToe</h3>
-                        <p class="text-slate-600 text-sm mb-6 flex-grow leading-relaxed">
-                            Demonstrates fundamental C mastery with a pure console-based Tic Tac Toe. Focuses on matrix operations, memory efficiency, and game state algorithms.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700">C Language</span>
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700">Algorithms</span>
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700">Console</span>
-                        </div>
-                        <a href="https://github.com/Saikrishna-dev-oss/TicTacToe" target="_blank" class="text-emerald-600 font-bold text-sm hover:text-emerald-700 flex items-center gap-2 w-max transition-colors">
-                            View Repository <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="glass-card card-glow-hover overflow-hidden group flex flex-col h-full bg-white">
-                    <div class="h-48 bg-slate-50 relative overflow-hidden flex items-center justify-center border-b border-slate-100">
-                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-slate-100/50 z-10"></div>
-                        <div class="absolute w-full h-full" style="background: radial-gradient(ellipse at center, rgba(168,85,247,0.1) 0%, transparent 70%);"></div>
-                        <i class="fab fa-ethereum text-7xl text-purple-600 group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 z-20"></i>
-                    </div>
-                    <div class="p-8 flex-grow flex flex-col bg-white/50">
-                        <span class="text-xs font-bold uppercase tracking-wider text-purple-600 mb-1">Blockchain / Web3</span>
-                        <h3 class="text-2xl font-bold text-slate-800 mb-3">NFT Marketplace DApp</h3>
-                        <p class="text-slate-600 text-sm mb-6 flex-grow leading-relaxed">
-                            A highly robust Next.js and Solidity DApp for minting and trading NFTs. Incorporates wallet connection, IPFS, and precise creator-royalty logic.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700">Next.js</span>
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700">Solidity</span>
-                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700">Wagmi</span>
-                        </div>
-                        <a href="https://github.com/Saikrishna-dev-oss/NFT-marketplace-lite/tree/main/DApp" target="_blank" class="text-purple-600 font-bold text-sm hover:text-purple-700 flex items-center gap-2 w-max transition-colors">
-                            View Repository <i class="fas fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
-                        </a>
                     </div>
                 </div>
 
             </div>
-                
         </section>
-
 
         <!-- CTA -->
         <div class="text-center py-8 reveal">

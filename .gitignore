@@ -1,0 +1,35 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor settings
+.vscode/*
+!.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# Logs and local environment files
+*.log
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+
+# Build and coverage output
+dist/
+build/
+out/
+coverage/
+.cache/
+.parcel-cache/
+.next/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak

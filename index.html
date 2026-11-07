@@ -12,9 +12,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <script>
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
@@ -31,6 +39,7 @@
         }
     </script>
     <link rel="stylesheet" href="style.css">
+    <script src="theme.js" defer></script>
 </head>
 <body class="antialiased relative selection:bg-indigo-200 selection:text-indigo-900">
 
@@ -54,8 +63,14 @@
                 <a href="skills.html"   class="hover:text-indigo-600 transition-colors">Skills</a>
                 <a href="contact.html"  class="hover:text-indigo-600 transition-colors">Contact</a>
             </div>
-            <a href="contact.html" class="hidden md:block btn-premium text-sm py-2 px-5">Get in touch</a>
-            <button id="menuBtn" class="md:hidden text-slate-800"><i class="fas fa-bars text-xl"></i></button>
+            <div class="flex items-center gap-3">
+                <button type="button" class="theme-toggle-btn" aria-label="Toggle dark/light theme" title="Toggle theme">
+                    <i class="fas fa-moon theme-toggle-dark-icon text-sm"></i>
+                    <i class="fas fa-sun theme-toggle-light-icon text-sm"></i>
+                </button>
+                <a href="contact.html" class="hidden md:inline-block btn-premium text-sm py-2 px-5">Get in touch</a>
+                <button id="menuBtn" class="md:hidden text-slate-800 focus:outline-none" aria-label="Open menu"><i class="fas fa-bars text-xl"></i></button>
+            </div>
         </div>
         <!-- Mobile Menu -->
         <div id="mobileMenu" class="hidden md:hidden glass-card mx-4 mt-2 px-6 py-4 rounded-2xl flex flex-col gap-4 text-sm font-medium text-slate-600">
@@ -63,6 +78,13 @@
             <a href="projects.html" class="hover:text-indigo-600 transition-colors">Projects</a>
             <a href="skills.html"   class="hover:text-indigo-600 transition-colors">Skills</a>
             <a href="contact.html"  class="hover:text-indigo-600 transition-colors">Contact</a>
+            <div class="pt-2 border-t border-slate-200/60 flex items-center justify-between">
+                <span class="text-xs font-semibold text-slate-500">Theme</span>
+                <button type="button" class="theme-toggle-btn" aria-label="Toggle theme">
+                    <i class="fas fa-moon theme-toggle-dark-icon text-sm"></i>
+                    <i class="fas fa-sun theme-toggle-light-icon text-sm"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -178,8 +200,11 @@
 
         // Sticky navbar blur on scroll
         const navPill = document.getElementById('navPill');
+        const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
-            navPill.classList.toggle('nav-scrolled', window.scrollY > 50);
+            const isScrolled = window.scrollY > 15;
+            if (navPill) navPill.classList.toggle('nav-scrolled', isScrolled);
+            if (navbar) navbar.classList.toggle('nav-scrolled', isScrolled);
         });
     </script>
 </body>
